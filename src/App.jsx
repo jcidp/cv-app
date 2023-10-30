@@ -11,11 +11,20 @@ function App() {
   });
   const [experience, setExperience] = useState([
     {
-      company: "",
-      position: "",
-      start_date: "",
+      company: "Consulting Co.",
+      position: "Consultant",
+      start_date: "2022-10-01",
       end_date: "",
       responsibilities: [],
+      id: crypto.randomUUID(),
+    },
+    {
+      company: "Consulting Co.",
+      position: "Analyst",
+      start_date: "2020-10-01",
+      end_date: "2022-09-30",
+      responsibilities: [],
+      id: crypto.randomUUID(),
     }
   ]);
   const [education, setEducation] = useState([
@@ -27,11 +36,22 @@ function App() {
     },
   ]);
 
-  const handleInputChange = e => {
+  const handleGeneralInputChange = e => {
     const field = e.target.id;
     const newInfo = {...generalInfo};
     newInfo[field] = e.target.value;
     setGeneralInfo(newInfo);
+  };
+
+  const handleExperienceInputChange = e => {
+    const field = e.target.name;
+    const targetId = e.target.id.slice(field.length);
+    setExperience(experience.map(entry => {
+      if (targetId !== entry.id) return entry;
+      const newEntry = {...entry};
+      newEntry[field] = e.target.value;
+      return newEntry;
+    }));
   }
 
   return (
@@ -41,7 +61,8 @@ function App() {
           generalInfo={generalInfo}
           experience={experience} 
           education={education}
-          handleInputChange={handleInputChange}
+          handleGeneralInputChange={handleGeneralInputChange}
+          handleExperienceInputChange={handleExperienceInputChange}
         /> :
         <></>}
     </>

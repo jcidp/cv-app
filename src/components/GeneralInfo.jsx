@@ -2,7 +2,7 @@ import "../styles/GeneralInfo.css"
 
 function GeneralInfo({name, email, phone, onChange}) {
     return (
-        <fieldset>
+        <fieldset className="personal-info">
             <legend>Personal Info</legend>
             <label htmlFor="name">Name:</label>
             <input type="text" name="name" id="name" value={name} onChange={onChange} />

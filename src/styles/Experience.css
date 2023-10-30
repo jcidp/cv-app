@@ -1,5 +1,7 @@
-.personal-info {
+.experience-entry {
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 1rem;
+    padding: 1rem;
+    border: 1px solid white;
 }
