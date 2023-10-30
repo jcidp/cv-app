@@ -1,7 +1,13 @@
 .experience-entry {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: max-content 1fr 1fr;
     gap: 1rem;
     padding: 1rem;
     border: 1px solid white;
+    margin-bottom: 1rem;
+}
+
+.responsibilities {
+    grid-column-start: 3;
+    grid-row: 1 / 4;
 }

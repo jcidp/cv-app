@@ -14,6 +14,16 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  padding: 1rem;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
