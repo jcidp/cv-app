@@ -10,4 +10,10 @@
 .responsibilities {
     grid-column-start: 3;
     grid-row: 1 / 4;
+    display: grid;
+    gap: 1rem;
+
+    & input {
+        min-height: 1.5rem;
+    }
 }

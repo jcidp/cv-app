@@ -15,7 +15,10 @@ function App() {
       position: "Consultant",
       start_date: "2022-10-01",
       end_date: "",
-      responsibilities: [{id: crypto.randomUUID(), value: "Responsibility1"}],
+      responsibilities: [
+        {id: crypto.randomUUID(), value: "Responsibility1"},
+        {id: crypto.randomUUID(), value: "Responsibility2"},
+      ],
       id: crypto.randomUUID(),
     },
     {
@@ -23,16 +26,24 @@ function App() {
       position: "Analyst",
       start_date: "2020-10-01",
       end_date: "2022-09-30",
-      responsibilities: [{id: crypto.randomUUID(), value: "Responsibility2"}],
+      responsibilities: [{id: crypto.randomUUID(), value: "More Responsibility"}],
       id: crypto.randomUUID(),
     }
   ]);
   const [education, setEducation] = useState([
     {
-      school: "",
-      degree: "",
-      start_date: "",
-      end_date: "",
+      school: "University of Pennsylvania",
+      degree: "MBA",
+      start_date: "2020-08-01",
+      end_date: "2022-05-30",
+      id: crypto.randomUUID(),
+    },
+    {
+      school: "MIT",
+      degree: "B.S. Computer Science",
+      start_date: "2015-08-01",
+      end_date: "2019-05-30",
+      id: crypto.randomUUID(),
     },
   ]);
 
@@ -83,6 +94,7 @@ function App() {
           education={education}
           handleGeneralInputChange={handleGeneralInputChange}
           handleExperienceInputChange={handleExperienceInputChange}
+          handleEducationInputChange={handleEducationInputChange}
         /> :
         <></>}
     </>
