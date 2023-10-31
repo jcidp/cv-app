@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Form from './components/Form';
+import Header from './components/Header';
 
 function App() {
   const [isEditing, setIsEditing] = useState(true);
@@ -83,10 +84,15 @@ function App() {
       newEntry[field] = e.target.value;
       return newEntry;
     }));
-  ;}
+  };
+
+  const handleViewChange = () => {
+    setIsEditing(isEditing ? false : true);
+  };
 
   return (
     <>
+      <Header isEditing={isEditing} onClick={handleViewChange} />
       {isEditing ? 
         <Form 
           generalInfo={generalInfo}
