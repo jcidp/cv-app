@@ -1,6 +1,6 @@
 import "../styles/Education.css"
 
-function EducationEntry({school, degree, start_date, end_date, id, onChange}) {
+function EducationEntry({school, degree, start_date, end_date, location, id, onChange}) {
     return (
         <div className="education-entry">
             <label htmlFor={"school" + id}>School:</label>
@@ -11,6 +11,8 @@ function EducationEntry({school, degree, start_date, end_date, id, onChange}) {
             <input type="date" name="start_date" id={"start_date" + id} value={start_date} onChange={onChange} />
             <label htmlFor={"end_date" + id}>End Date:</label>
             <input type="date" name="end_date" id={"end_date" + id} value={end_date} onChange={onChange} />
+            <label htmlFor={"location" + id}>City:</label>
+            <input type="text" name="location" id={"location" + id} value={location} onChange={onChange} />
         </div>
     )
 }

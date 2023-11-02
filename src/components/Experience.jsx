@@ -1,6 +1,6 @@
 import "../styles/Experience.css";
 
-function ExperienceEntry({company, position, start_date, end_date, responsibilities, id, onChange}) {
+function ExperienceEntry({company, position, start_date, end_date, location, responsibilities, id, onChange}) {
     const responsibilitiesList = responsibilities.map((responsibility, i) =>
         <input type="text" name="responsibility" key={responsibility.id} id={"responsibility" + i + id} value={responsibility.value} onChange={onChange} data-index={i} data-id={responsibility.id} />
     );
@@ -15,6 +15,8 @@ function ExperienceEntry({company, position, start_date, end_date, responsibilit
             <input type="date" name="start_date" id={"start_date" + id} value={start_date} onChange={onChange} />
             <label htmlFor={"end_date" + id}>End Date:</label>
             <input type="date" name="end_date" id={"end_date" + id} value={end_date} onChange={onChange} />
+            <label htmlFor={"location" + id}>City:</label>
+            <input type="text" name="location" id={"location" + id} value={location} onChange={onChange} />
             <div className="responsibilities">
                 <p>Responsibilities:</p>
                 {responsibilitiesList}

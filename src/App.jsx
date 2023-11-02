@@ -2,13 +2,14 @@ import { useState } from 'react'
 import './App.css'
 import Form from './components/Form';
 import Header from './components/Header';
+import View from './components/View';
 
 function App() {
   const [isEditing, setIsEditing] = useState(true);
   const [generalInfo, setGeneralInfo] = useState({
-    name: "James",
-    email: "dog",
-    phone: "55",
+    name: "James The Dog",
+    email: "woof@dog.com",
+    phone: "5512345678",
   });
   const [experience, setExperience] = useState([
     {
@@ -16,6 +17,7 @@ function App() {
       position: "Consultant",
       start_date: "2022-10-01",
       end_date: "",
+      location: "New York City, NY",
       responsibilities: [
         {id: crypto.randomUUID(), value: "Responsibility1"},
         {id: crypto.randomUUID(), value: "Responsibility2"},
@@ -27,6 +29,7 @@ function App() {
       position: "Analyst",
       start_date: "2020-10-01",
       end_date: "2022-09-30",
+      location: "New York City, NY",
       responsibilities: [{id: crypto.randomUUID(), value: "More Responsibility"}],
       id: crypto.randomUUID(),
     }
@@ -37,6 +40,7 @@ function App() {
       degree: "MBA",
       start_date: "2020-08-01",
       end_date: "2022-05-30",
+      location: "Philadelphia, PA",
       id: crypto.randomUUID(),
     },
     {
@@ -44,6 +48,7 @@ function App() {
       degree: "B.S. Computer Science",
       start_date: "2015-08-01",
       end_date: "2019-05-30",
+      location: "Boston, MA",
       id: crypto.randomUUID(),
     },
   ]);
@@ -102,7 +107,11 @@ function App() {
           handleExperienceInputChange={handleExperienceInputChange}
           handleEducationInputChange={handleEducationInputChange}
         /> :
-        <></>}
+        <View
+          generalInfo={generalInfo}
+          experience={experience} 
+          education={education}
+        />}
     </>
   )
 }
