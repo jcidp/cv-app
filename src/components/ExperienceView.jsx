@@ -3,12 +3,12 @@ function ExperienceEntryView({company, position, start_date, end_date, location,
         <li key={responsibility.id}>{responsibility.value}</li>
     );
     
-    return (<div className="experience-entry-view">
+    return (<div className="experience">
         <b>{company}</b>
-        <span>{start_date} - {end_date || "present"}</span>
+        <span className="text-right">{start_date} - {end_date || "present"}</span>
         <i>{position}</i>
-        <span>{location}</span>
-        <ul>
+        <span className="text-right">{location}</span>
+        <ul className="responsibility">
             {responsibilityList}
         </ul>
     </div>)

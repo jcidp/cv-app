@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import "./App.scss"
 import Form from './components/Form';
 import Header from './components/Header';
 import View from './components/View';
@@ -20,7 +20,7 @@ function App() {
       location: "New York City, NY",
       responsibilities: [
         {id: crypto.randomUUID(), value: "Responsibility1"},
-        {id: crypto.randomUUID(), value: "Responsibility2"},
+        {id: crypto.randomUUID(), value: "Responsibility2 this is a very long responsibility"},
       ],
       id: crypto.randomUUID(),
     },

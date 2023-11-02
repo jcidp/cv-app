@@ -1,5 +1,3 @@
-import "../styles/Experience.css";
-
 function ExperienceEntry({company, position, start_date, end_date, location, responsibilities, id, onChange}) {
     const responsibilitiesList = responsibilities.map((responsibility, i) =>
         <input type="text" name="responsibility" key={responsibility.id} id={"responsibility" + i + id} value={responsibility.value} onChange={onChange} data-index={i} data-id={responsibility.id} />

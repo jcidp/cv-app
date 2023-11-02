@@ -1,5 +1,5 @@
 function GeneralInfoView({name, email, phone}) {
-    return (<section>
+    return (<section className="generalInfo">
         <h2>{name}</h2>
         <a>{email}</a>
         <span>{phone}</span>

@@ -1,5 +1,3 @@
-import "../styles/Education.css"
-
 function EducationEntry({school, degree, start_date, end_date, location, id, onChange}) {
     return (
         <div className="education-entry">

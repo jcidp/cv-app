@@ -1,5 +1,3 @@
-import "../styles/GeneralInfo.css"
-
 function GeneralInfo({name, email, phone, onChange}) {
     return (
         <fieldset className="personal-info">
