@@ -3,6 +3,7 @@ import "./App.scss"
 import Form from './components/Form';
 import Header from './components/Header';
 import View from './components/View';
+import Footer from './components/Footer';
 
 function App() {
   const [isEditing, setIsEditing] = useState(true);
@@ -98,20 +99,26 @@ function App() {
   return (
     <>
       <Header isEditing={isEditing} onClick={handleViewChange} />
-      {isEditing ? 
-        <Form 
-          generalInfo={generalInfo}
-          experience={experience} 
-          education={education}
-          handleGeneralInputChange={handleGeneralInputChange}
-          handleExperienceInputChange={handleExperienceInputChange}
-          handleEducationInputChange={handleEducationInputChange}
-        /> :
-        <View
-          generalInfo={generalInfo}
-          experience={experience} 
-          education={education}
-        />}
+      <main>
+        <div className='wrapper'>
+        {isEditing ? 
+          <Form 
+            generalInfo={generalInfo}
+            experience={experience} 
+            education={education}
+            handleGeneralInputChange={handleGeneralInputChange}
+            handleExperienceInputChange={handleExperienceInputChange}
+            handleEducationInputChange={handleEducationInputChange}
+          /> :
+          <View
+            generalInfo={generalInfo}
+            experience={experience} 
+            education={education}
+          />
+        }
+        </div>
+      </main>
+      <Footer />
     </>
   )
 }

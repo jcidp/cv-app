@@ -16,7 +16,7 @@ function ExperienceEntryView({company, position, start_date, end_date, location,
 
 function ExperienceView(props) {
     return (<section>
-        <h2>Experience</h2>
+        <h2 className="section-heading">Experience</h2>
         {props.experience.map(entry => 
             <ExperienceEntryView key={entry.id} {...entry} />
         )}
