@@ -1,6 +1,9 @@
-function ExperienceEntry({company, position, start_date, end_date, location, responsibilities, id, onChange, onDelete}) {
+function ExperienceEntry({company, position, start_date, end_date, location, responsibilities, id, onChange, onDelete, onAdd}) {
     const responsibilitiesList = responsibilities.map((responsibility, i) =>
-        <input type="text" name="responsibility" key={responsibility.id} id={"responsibility" + i + id} value={responsibility.value} onChange={onChange} data-index={i} data-id={responsibility.id} />
+        <div className="responsibility-container" key={responsibility.id}>
+            <input type="text" name="responsibility" id={"responsibility" + i + id} value={responsibility.value} onChange={onChange} data-index={i} data-id={responsibility.id} />
+            <svg onClick={onDelete} data-section="responsibilities" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path data-section="responsibilities" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
+        </div>
     );
 
     return (
@@ -18,6 +21,7 @@ function ExperienceEntry({company, position, start_date, end_date, location, res
             <div className="responsibilities">
                 <p>Responsibilities:</p>
                 {responsibilitiesList}
+                <button onClick={onAdd} data-section="responsibilities">+ Add responsibility</button>
             </div>
             <button className="remove" id={id} onClick={onDelete} data-section="experience">Delete entry</button>
         </div>
@@ -29,7 +33,7 @@ function Experience(props) {
         <fieldset className="experience-fieldset">
             <legend>Experience</legend>
             {props.experience.map(entry =>
-                <ExperienceEntry key={entry.id} {...entry} onChange={props.onChange} onDelete={props.onDelete} />
+                <ExperienceEntry key={entry.id} {...entry} onChange={props.onChange} onDelete={props.onDelete} onAdd={props.onAdd} />
             )}
             <button onClick={props.onAdd} data-section="experience">Add entry</button>
         </fieldset>

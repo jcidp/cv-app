@@ -38,6 +38,14 @@ main {
 // Edit view
 fieldset {
     padding: 1rem;
+
+    svg {
+        max-width: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .personal-info {
@@ -70,14 +78,23 @@ fieldset {
     margin-bottom: 1rem;
     border-bottom: 1px solid grey;
     padding-bottom: 1rem;
+    
+    .responsibilities {
+        grid-column-start: 3;
+        grid-row: 1 / 5;
+        display: grid;
+        gap: 1rem;
+        
+        .responsibility-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem
+        }
+    }
+
+
 }
 
-.responsibilities {
-    grid-column-start: 3;
-    grid-row: 1 / 5;
-    display: grid;
-    gap: 1rem;
-}
 
 // View view
 section:not(:first-of-type) {

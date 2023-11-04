@@ -104,8 +104,16 @@ function App() {
       case "education":
         setEducation(education.filter(entry =>
           e.target.id !== entry.id
-        ))
+        ));
         break;
+      
+      case "responsibilities":
+        setExperience(experience.map(entry => {
+          if (e.target.closest(".experience-entry").lastElementChild.id !== entry.id) return entry;
+          return {...entry, responsibilities: [...entry.responsibilities.filter(responsibility => {
+            return responsibility.id !== e.target.closest(".responsibility-container").firstElementChild.dataset.id;
+          })]};
+        }));
     }
   };
 
@@ -136,7 +144,17 @@ function App() {
           end_date: "",
           location: "",
           id: crypto.randomUUID(),
-        }])
+        }]);
+        break;
+
+      case "responsibilities":
+        setExperience(experience.map(entry => {
+          if (e.target.closest(".experience-entry").lastElementChild.id !== entry.id) return entry;
+          return {...entry, responsibilities: [...entry.responsibilities, {
+            id: crypto.randomUUID(),
+            value: "",
+          }]};
+        }));
     }
   }
 

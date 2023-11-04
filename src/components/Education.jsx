@@ -1,4 +1,4 @@
-function EducationEntry({school, degree, start_date, end_date, location, id, onChange, onDelete, onAdd}) {
+function EducationEntry({school, degree, start_date, end_date, location, id, onChange, onDelete}) {
     return (
         <div className="education-entry">
             <label htmlFor={"school" + id}>School:</label>
