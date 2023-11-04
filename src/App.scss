@@ -147,6 +147,14 @@ fieldset {
 }
 
 // View view
+.bold {
+    font-weight: bold;
+}
+
+.italics {
+    font-style: italic;
+}
+
 section:not(:first-of-type) {
     margin-top: 2rem;
 }

@@ -1,9 +1,9 @@
 function EducationEntry({school, degree, start_date, end_date, location}) {
     return (<div className="education">
-        <b>{school}</b>
-        <span className="text-right">{start_date} - {end_date || "present"}</span>
-        <i>{degree}</i>
-        <span className="text-right">{location}</span>
+        <p className="bold">{school}</p>
+        <p className="text-right">{start_date} - {end_date || "present"}</p>
+        <p className="italics">{degree}</p>
+        <p className="text-right">{location}</p>
     </div>)
 }
 

@@ -4,10 +4,10 @@ function ExperienceEntryView({company, position, start_date, end_date, location,
     );
     
     return (<div className="experience">
-        <b>{company}</b>
-        <span className="text-right">{start_date} - {end_date || "present"}</span>
-        <i>{position}</i>
-        <span className="text-right">{location}</span>
+        <p className="bold">{company}</p>
+        <p className="text-right">{start_date} - {end_date || "present"}</p>
+        <p className="italics">{position}</p>
+        <p className="text-right">{location}</p>
         <ul className="responsibility">
             {responsibilityList}
         </ul>
