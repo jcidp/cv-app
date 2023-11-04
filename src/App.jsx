@@ -92,6 +92,54 @@ function App() {
     }));
   };
 
+  const handleRemoveElement = e => {
+    e.preventDefault();
+    switch (e.target.dataset.section) {
+      case "experience":
+        setExperience(experience.filter(entry =>
+          e.target.id !== entry.id
+        ));
+        break;
+    
+      case "education":
+        setEducation(education.filter(entry =>
+          e.target.id !== entry.id
+        ))
+        break;
+    }
+  };
+
+  const handleAddElement = e => {
+    e.preventDefault();
+    switch (e.target.dataset.section) {
+      case "experience":
+        setExperience([...experience,
+          {
+            company: "",
+            position: "",
+            start_date: "",
+            end_date: "",
+            location: "",
+            responsibilities: [
+              {id: crypto.randomUUID(), value: ""},
+            ],
+            id: crypto.randomUUID(),
+          }
+        ]);
+        break;
+    
+      case "education":
+        setEducation([...education, {
+          school: "",
+          degree: "",
+          start_date: "",
+          end_date: "",
+          location: "",
+          id: crypto.randomUUID(),
+        }])
+    }
+  }
+
   const handleViewChange = () => {
     setIsEditing(isEditing ? false : true);
   };
@@ -109,6 +157,8 @@ function App() {
             handleGeneralInputChange={handleGeneralInputChange}
             handleExperienceInputChange={handleExperienceInputChange}
             handleEducationInputChange={handleEducationInputChange}
+            handleRemoveElement={handleRemoveElement}
+            handleAddElement={handleAddElement}
           /> :
           <View
             generalInfo={generalInfo}

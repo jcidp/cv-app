@@ -1,4 +1,4 @@
-function ExperienceEntry({company, position, start_date, end_date, location, responsibilities, id, onChange}) {
+function ExperienceEntry({company, position, start_date, end_date, location, responsibilities, id, onChange, onDelete}) {
     const responsibilitiesList = responsibilities.map((responsibility, i) =>
         <input type="text" name="responsibility" key={responsibility.id} id={"responsibility" + i + id} value={responsibility.value} onChange={onChange} data-index={i} data-id={responsibility.id} />
     );
@@ -19,17 +19,19 @@ function ExperienceEntry({company, position, start_date, end_date, location, res
                 <p>Responsibilities:</p>
                 {responsibilitiesList}
             </div>
+            <button className="remove" id={id} onClick={onDelete} data-section="experience">Delete entry</button>
         </div>
     )
 }
 
 function Experience(props) {
     return (
-        <fieldset>
+        <fieldset className="experience-fieldset">
             <legend>Experience</legend>
             {props.experience.map(entry =>
-                <ExperienceEntry key={entry.id} {...entry} onChange={props.onChange} />
+                <ExperienceEntry key={entry.id} {...entry} onChange={props.onChange} onDelete={props.onDelete} />
             )}
+            <button onClick={props.onAdd} data-section="experience">Add entry</button>
         </fieldset>
     );
 }

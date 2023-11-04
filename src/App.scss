@@ -57,6 +57,8 @@ fieldset {
     padding: 1rem;
     border: 1px solid white;
     margin-bottom: 1rem;
+    border-bottom: 1px solid grey;
+    padding-bottom: 1rem;
 }
 
 .experience-entry {
@@ -66,6 +68,8 @@ fieldset {
     padding: 1rem;
     border: 1px solid white;
     margin-bottom: 1rem;
+    border-bottom: 1px solid grey;
+    padding-bottom: 1rem;
 }
 
 .responsibilities {
@@ -160,11 +164,7 @@ footer {
     .experience-entry {
         grid-template-columns: 1fr;
         padding: 0;
-
-        &:not(:last-of-type) {
-            border-bottom: 1px solid grey;
-            padding-bottom: 1rem;
-        }
+        padding-bottom: 1rem;
 
         .responsibilities {
             grid-column-start: auto;
@@ -172,6 +172,12 @@ footer {
             display: grid;
             gap: 1rem;
         }
+    }
+
+    .education-entry {
+        grid-template-columns: 1fr;
+        padding: 0;
+        padding-bottom: 1rem;
     }
 }
 

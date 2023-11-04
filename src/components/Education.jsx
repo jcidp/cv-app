@@ -1,4 +1,4 @@
-function EducationEntry({school, degree, start_date, end_date, location, id, onChange}) {
+function EducationEntry({school, degree, start_date, end_date, location, id, onChange, onDelete, onAdd}) {
     return (
         <div className="education-entry">
             <label htmlFor={"school" + id}>School:</label>
@@ -11,17 +11,19 @@ function EducationEntry({school, degree, start_date, end_date, location, id, onC
             <input type="date" name="end_date" id={"end_date" + id} value={end_date} onChange={onChange} />
             <label htmlFor={"location" + id}>City:</label>
             <input type="text" name="location" id={"location" + id} value={location} onChange={onChange} />
+            <button onClick={onDelete} id={id} data-section="education">Delete entry</button>
         </div>
     )
 }
 
 function Education(props) {
     return (
-        <fieldset>
+        <fieldset className="education-fieldset">
             <legend>Education</legend>
             {props.education.map(entry =>
-                <EducationEntry key={entry.id} {...entry} onChange={props.onChange} />
+                <EducationEntry key={entry.id} {...entry} onChange={props.onChange} onDelete={props.onDelete} />
             )}
+            <button onClick={props.onAdd} data-section="education">Add entry</button>
         </fieldset>
     )
 }
