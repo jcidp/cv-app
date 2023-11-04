@@ -129,3 +129,64 @@ footer {
         //fill: white;
     }
 }
+
+@media (max-width: 600px) {
+    header {
+        .wrapper {
+            width: auto;
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            line-height: normal;
+            padding: 0.25rem 0;
+        }
+        
+        nav {
+            min-width: auto;
+
+            button {
+                min-width: auto;
+                padding: 0.25em 1em;
+            }
+        }
+    }
+
+    .wrapper {
+        width: min(90ch, 100% - 2rem);
+        margin-inline: auto;
+    }
+
+    .experience-entry {
+        grid-template-columns: 1fr;
+        padding: 0;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid grey;
+            padding-bottom: 1rem;
+        }
+
+        .responsibilities {
+            grid-column-start: auto;
+            grid-row: auto;
+            display: grid;
+            gap: 1rem;
+        }
+    }
+}
+
+@media print {
+    header, footer {
+        display: none;
+    }
+
+    body {
+        padding: 1rem;
+    }
+
+    #root {
+        height: auto;
+    }
+}
+
+@page { size: auto;  margin: 0mm; }

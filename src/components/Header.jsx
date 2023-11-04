@@ -5,7 +5,7 @@ function Header({isEditing, onClick}) {
                 <h1>CV Builder</h1>
                 <nav>
                     <button onClick={onClick}>{isEditing ? "Visualize" : "Edit"}</button>
-                    {!isEditing && <button>Print</button>}
+                    {!isEditing && <button onClick={() => window.print()}>Print</button>}
                 </nav>
             </div>
         </header>
