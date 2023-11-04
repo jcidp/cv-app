@@ -21,9 +21,11 @@ function ExperienceEntry({company, position, start_date, end_date, location, res
             <div className="responsibilities">
                 <p>Responsibilities:</p>
                 {responsibilitiesList}
-                <button onClick={onAdd} data-section="responsibilities">+ Add responsibility</button>
+                <div className="btn-container">
+                    <button className="add-responsibility" onClick={onAdd} data-section="responsibilities">+</button>
+                </div>
             </div>
-            <button className="remove" id={id} onClick={onDelete} data-section="experience">Delete entry</button>
+            <button className="remove" id={id} onClick={onDelete} data-section="experience">Delete position</button>
         </div>
     )
 }
@@ -35,7 +37,7 @@ function Experience(props) {
             {props.experience.map(entry =>
                 <ExperienceEntry key={entry.id} {...entry} onChange={props.onChange} onDelete={props.onDelete} onAdd={props.onAdd} />
             )}
-            <button onClick={props.onAdd} data-section="experience">Add entry</button>
+            <button className="add-entry" onClick={props.onAdd} data-section="experience">+ Add position</button>
         </fieldset>
     );
 }

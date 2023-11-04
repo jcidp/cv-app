@@ -38,6 +38,7 @@ main {
 // Edit view
 fieldset {
     padding: 1rem;
+    display: grid;
 
     svg {
         max-width: 1rem;
@@ -71,7 +72,7 @@ fieldset {
 
 .experience-entry {
     display: grid;
-    grid-template-columns: max-content 1fr 1fr;
+    grid-template-columns: max-content 1fr;
     gap: 1rem;
     padding: 1rem;
     border: 1px solid white;
@@ -80,21 +81,70 @@ fieldset {
     padding-bottom: 1rem;
     
     .responsibilities {
-        grid-column-start: 3;
-        grid-row: 1 / 5;
-        display: grid;
-        gap: 1rem;
+        grid-column: 1 / -1;
         
         .responsibility-container {
+            margin-top: 1rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem
+            gap: 0.5rem;
+
+            &:first-of-type {
+                margin-top: 0.25rem;
+            }
+
+            input {
+                flex-grow: 1;
+            }
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .add-responsibility {
+            margin-top: 0.5rem;
+            padding: 0;
+            width: 100%;
+            font-size: 1.5rem;
+            color: darkslategrey;
+            background-color: transparent;
+            border: 1px solid transparent;
+
+            &:hover {
+                margin-top: 0.5rem;
+                border-color: grey;
+                border-radius: 2px;
+            }
         }
     }
 
-
 }
 
+.remove {
+    color: red;
+    background-color: transparent;
+    border: 1px solid red;
+    grid-column: 1 / -1;
+    max-width: fit-content;
+    place-self: center;
+
+    &:hover {
+        background-color: red;
+        color: white;
+    }
+}
+
+.add-entry {
+    margin: 0 auto;
+
+    &:not(:hover) {
+        background-color: transparent;
+        color: black;
+        border-color: black;
+    }
+}
 
 // View view
 section:not(:first-of-type) {
@@ -179,16 +229,8 @@ footer {
     }
 
     .experience-entry {
-        grid-template-columns: 1fr;
         padding: 0;
         padding-bottom: 1rem;
-
-        .responsibilities {
-            grid-column-start: auto;
-            grid-row: auto;
-            display: grid;
-            gap: 1rem;
-        }
     }
 
     .education-entry {
