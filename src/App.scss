@@ -6,6 +6,7 @@
 
 header {
     border-bottom: 1px solid black;
+    margin-bottom: 1rem;
 
     .wrapper {
         display: flex;
@@ -36,8 +37,19 @@ main {
 }
 
 // Edit view
+input {
+    padding: 0 0.5rem;
+}
+
+fieldset, input {
+    border-radius: 7px;
+    border: 1px solid grey;
+    outline: none;
+}
+
 fieldset {
     padding: 1rem;
+    margin-bottom: 1rem;
     display: grid;
 
     svg {
@@ -95,6 +107,8 @@ fieldset {
 
             input {
                 flex-grow: 1;
+                font-size: 0.875rem;
+                padding: 0.25rem 0.5rem;
             }
         }
 
@@ -111,11 +125,10 @@ fieldset {
             color: darkslategrey;
             background-color: transparent;
             border: 1px solid transparent;
+            border-radius: 7px;
 
             &:hover {
-                margin-top: 0.5rem;
                 border-color: grey;
-                border-radius: 2px;
             }
         }
     }
@@ -193,19 +206,22 @@ section:not(:first-of-type) {
 
 footer {
     border-top: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
     padding: 0.25rem;
     
     a {
         color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        &:hover {
+            color: black;
+        }
     }
 
     svg {
         max-width: 1.5em;
-        //fill: white;
     }
 }
 
